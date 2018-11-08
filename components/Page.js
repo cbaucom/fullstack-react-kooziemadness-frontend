@@ -26,6 +26,33 @@ const Inner = styled.div`
   background: ${props => props.theme.offWhite};
 `;
 
+injectGlobal`
+  @font-face {
+    font-family: 'Lato';
+    src: url('/static/Lato-Medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  html {
+    box-sizing: border-box;
+    font-size: 10px;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  body {
+    padding: 0;
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 2;
+    font-family: 'Lato';
+  }
+  a {
+    text-decoration: none;
+    color: ${theme.black};
+  }
+  button {  font-family: 'Lato'; }
+`;
 class Page extends Component {
   render() {
     return (
