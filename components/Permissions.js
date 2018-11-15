@@ -1,4 +1,4 @@
-import { Query, Mutation } from 'react-apollo';
+import { Query, Mutation } from "react-apollo";
 
 import Error from "./ErrorMessage";
 import gql from "graphql-tag";
@@ -79,7 +79,7 @@ class UserPermissions extends React.Component {
   state = {
     permissions: this.props.user.permissions
   };
-  handlePermissionChange = e => {
+  handlePermissionChange = (e, updatePermissions) => {
     const checkbox = e.target;
     // take a copy of the current permissions
     let updatedPermissions = [...this.state.permissions];
@@ -92,7 +92,13 @@ class UserPermissions extends React.Component {
         permission => permission !== checkbox.value
       );
     }
-    this.setState({ permissions: updatedPermissions });
+    // The line below relies on the user clicking the update button
+    // this.setState({ permissions: updatedPermissions });
+
+    // The line below updates the state when the checkbox is checked, no need to click the update button
+    this.setState({ permissions: updatedPermissions }, function() {
+      updatePermissions();
+    });
   };
   render() {
     const user = this.props.user;
@@ -124,7 +130,9 @@ class UserPermissions extends React.Component {
                       type="checkbox"
                       checked={this.state.permissions.includes(permission)}
                       value={permission}
-                      onChange={this.handlePermissionChange}
+                      onChange={e =>
+                        this.handlePermissionChange(e, updatePermissions)
+                      }
                     />
                   </label>
                 </td>
