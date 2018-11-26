@@ -1,7 +1,7 @@
 {
-  "name": "new-navy-frontend",
+  "name": "koozie-madness-frontend",
   "version": "1.0.0",
-  "description": "New Navy! An example React, GraphQL, Next and Apollo",
+  "description": "Koozie Madness! An example React, GraphQL, Next and Apollo",
   "main": "index.js",
   "scripts": {
     "dev": "next -p 7777",

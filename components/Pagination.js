@@ -27,7 +27,7 @@ const Pagination = props => (
         <PaginationStyles data-test="pagination">
           <Head>
             <title>
-              New Navy! — Page {page} of {pages}
+              Koozie Madness! — Page {page} of {pages}
             </title>
           </Head>
           <Link

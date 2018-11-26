@@ -51,7 +51,7 @@ class SingleItem extends Component {
           return (
             <SingleItemStyles>
               <Head>
-                <title>New Navy | {item.title}</title>
+                <title>Koozie Madness | {item.title}</title>
               </Head>
               <img src={item.largeImage} alt={item.title} />
               <div className="details">

@@ -45,7 +45,7 @@ class CreateItem extends Component {
     const files = e.target.files;
     const data = new FormData();
     data.append("file", files[0]);
-    data.append("upload_preset", "newnavy");
+    data.append("upload_preset", "kooziemadness");
 
     const res = await fetch(
       "https://api.cloudinary.com/v1_1/crbaucom/image/upload",
