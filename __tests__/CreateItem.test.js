@@ -103,16 +103,12 @@ describe("<CreateItem/>", () => {
     wrapper
       .find("#title")
       .simulate("change", { target: { value: item.title, name: "title" } });
-    wrapper
-      .find("#price")
-      .simulate("change", {
-        target: { value: item.price, name: "price", type: "number" }
-      });
-    wrapper
-      .find("#description")
-      .simulate("change", {
-        target: { value: item.description, name: "description" }
-      });
+    wrapper.find("#price").simulate("change", {
+      target: { value: item.price, name: "price", type: "number" }
+    });
+    wrapper.find("#description").simulate("change", {
+      target: { value: item.description, name: "description" }
+    });
     // mock the router
     Router.router = { push: jest.fn() };
     wrapper.find("form").simulate("submit");
