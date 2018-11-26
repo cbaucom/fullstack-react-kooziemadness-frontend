@@ -37,7 +37,7 @@ exports[`<CreateItem/> renders and matches snapshot 1`] = `
         placeholder="Title"
         required={true}
         type="text"
-        value="Cool Item"
+        value=""
       />
     </label>
     <label
@@ -50,7 +50,7 @@ exports[`<CreateItem/> renders and matches snapshot 1`] = `
         onChange={[Function]}
         placeholder="Description"
         required={true}
-        value="this is a cool item"
+        value=""
       />
     </label>
     <label
@@ -64,7 +64,7 @@ exports[`<CreateItem/> renders and matches snapshot 1`] = `
         placeholder="Price"
         required={true}
         type="number"
-        value={999}
+        value={0}
       />
     </label>
     <button
