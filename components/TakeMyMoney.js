@@ -65,7 +65,10 @@ class TakeMyMoney extends React.Component {
                   currency="USD"
                   email={me.email}
                   token={res => this.onToken(res, createOrder)}
-                >
+                  shippingAddress
+                  billingAddress
+                  zipCode={false}
+               >
                   {this.props.children}
                 </StripeCheckout>
               )}
