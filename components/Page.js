@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styled, { ThemeProvider, injectGlobal } from "styled-components";
+import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import Header from "../components/Header";
 import Meta from "../components/Meta";
 
@@ -25,7 +25,7 @@ const Inner = styled.div`
   padding: 2rem;
 `;
 
-injectGlobal`
+export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Lato';
     src: url('/static/Lato-Medium.woff2') format('woff2');
@@ -56,11 +56,14 @@ class Page extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <StyledPage>
-          <Meta />
-          <Header />
-          <Inner>{this.props.children}</Inner>
-        </StyledPage>
+        <React.Fragment>
+          <GlobalStyle />
+          <StyledPage>
+            <Meta />
+            <Header />
+            <Inner>{this.props.children}</Inner>
+          </StyledPage>
+        </React.Fragment>
       </ThemeProvider>
     );
   }
