@@ -25,21 +25,23 @@ const Center = styled.div`
 
 const ItemsList = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 60px;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
   max-width: ${props => props.theme.maxWidth};
   margin: 0 auto;
+  @media screen and (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 class Items extends Component {
   render() {
     return (
       <Center>
-        <Pagination page={this.props.page} />
         <Query
           query={ALL_ITEMS_QUERY}
           variables={{
-            skip: this.props.page * perPage - perPage
+            skip: this.props.page * perPage - perPage,
           }}
         >
           {({ data, error, loading }) => {
