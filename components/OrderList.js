@@ -1,6 +1,6 @@
 import React from "react";
 import { Query } from "react-apollo";
-import { formatDistance } from "date-fns";
+import { formatDistance, parseISO } from "date-fns";
 import Link from "next/link";
 import styled from "styled-components";
 import gql from "graphql-tag";
@@ -59,7 +59,7 @@ class OrderList extends React.Component {
                             Items
                           </p>
                           <p>{order.items.length} Products</p>
-                          <p>{formatDistance(order.createdAt, new Date())}</p>
+                          <p>{formatDistance(parseISO(order.createdAt), new Date())}</p>
                           <p>{formatMoney(order.total)}</p>
                         </div>
                         <div className="images">
